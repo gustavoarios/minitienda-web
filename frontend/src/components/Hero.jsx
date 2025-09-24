@@ -20,7 +20,7 @@ function Hero() {
             </div>
 
             <div className="chevron-container">
-                <a href="#proxima-seccion" className="chevron-link">
+                <a href="#experience" className="chevron-link">
                     <img src="/flecha.png" alt="Flecha hacia abajo" className="chevron-svg" />
                 </a>
             </div>

@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Ajusta para compensar la navbar fija */
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -338,4 +343,100 @@ body {
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* Experience Component Styles */
+.experience {
+  background: #DFEEE9;
+  padding: 4rem 2rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.experience-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.experience-header {
+  margin-bottom: 3rem;
+}
+
+.experience-icon {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background: #8B1538;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.experience-icon i {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.experience h2 {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 600;
+  margin: 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+}
+
+.stat-number {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #353c46;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+  font-variant-numeric: tabular-nums; /* Para que los números no "bailen" durante la animación */
+}
+
+.stat-number:hover {
+  transform: scale(1.1);
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 3rem;
+  }
+  
+  .experience h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
 }

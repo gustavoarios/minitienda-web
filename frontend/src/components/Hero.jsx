@@ -5,7 +5,7 @@ function Hero() {
         <section className="hero">
             <div className="hero-content animar-entrada">
                 <h1>Aprendé a Comunicar,<br /> Organizar y Liderar con éxito</h1>
-                <p>Te enseño a mejorar tu comunicación, productividad y liderazgo para destacar en cualquier ámbito.</p>
+                <p>Te ayudo a mejorar tu comunicación, productividad y liderazgo para destacar.</p>
 
                 <div className="boton-consulta">
                     <a
@@ -17,6 +17,12 @@ function Hero() {
                         Enviame tu consulta!
                     </a>
                 </div>
+            </div>
+
+            <div className="chevron-container">
+                <a href="#proxima-seccion" className="chevron-link">
+                    <img src="/flecha.png" alt="Flecha hacia abajo" className="chevron-svg" />
+                </a>
             </div>
         </section>
     );

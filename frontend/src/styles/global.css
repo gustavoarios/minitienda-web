@@ -158,6 +158,39 @@ body {
   color: #222;
 }
 
+.chevron-container {
+  position: absolute;
+  bottom: 95px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.chevron-svg {
+  width: 80px;
+  height: 80px;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+}
+
+.chevron-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
 .cta-button {
   background: #ff6b6b;
   color: white;
@@ -229,7 +262,8 @@ body {
 }
 
 .enroll-button {
-  background: #007bff; /*inscribirse*/
+  background: #007bff;
+  /*inscribirse*/
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;

@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+import './Experience.css';
 
 function Experience() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
   const [counters, setCounters] = useState([0, 0, 0, 0]);
   const sectionRef = useRef(null);
 
@@ -36,12 +37,12 @@ function Experience() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !isVisible) {
-          setIsVisible(true);
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
           startCountAnimation();
         }
       },
-      { threshold: 0.3 } // Se activa cuando 30% de la sección es visible
+      { threshold: 0.1 } // Reducir threshold para que se active antes
     );
 
     if (sectionRef.current) {
@@ -53,7 +54,7 @@ function Experience() {
         observer.unobserve(sectionRef.current);
       }
     };
-  }, [isVisible]);
+  }, [hasAnimated]); // Agregar hasAnimated como dependencia
 
   // Función para animar los números
   const startCountAnimation = () => {
@@ -79,12 +80,29 @@ function Experience() {
     <section id="experience" className="experience" ref={sectionRef}>
       <div className="experience-container">
         <div className="experience-header">
-          {/* <div className="experience-icon">
-            <i className="fas fa-award"></i>
-          </div> */}
           <h2>Blanca Cortés</h2>
         </div>
-        
+
+        <div className="experience-content">
+          <div className="experience-image">
+            <img src="/me-image.png" alt="Blanca Cortés" />
+          </div>
+          <div className="experience-text">
+            <h3>Master en Comunicación y Liderazgo</h3>
+            <p>
+              Soy profesora y conferencista con un <strong>Máster en Comunicación y Liderazgo</strong>, con más de <strong>10 años</strong> de experiencia formando líderes y equipos. He capacitado a más de <strong>500 profesionales</strong> y soy autora de <strong>3 libros</strong> sobre liderazgo transformacional y comunicación efectiva.
+              Mi pasión es transmitir conocimientos prácticos que puedan aplicarse en la vida real, combinando teoría con experiencias adquiridas en el campo.
+            </p>
+
+            <p>
+              A lo largo de mi trayectoria dicté más de <strong>1500 conferencias</strong> en <strong>5 países</strong>, participando en congresos, universidades y organizaciones internacionales. Mi propósito es inspirar y acompañar a cada persona en su desarrollo, impulsando <strong>líderes auténticos</strong> capaces de generar un impacto positivo en sus entornos.
+              Creo firmemente que el liderazgo consciente y la comunicación clara son claves para transformar equipos y comunidades.
+            </p>
+
+
+          </div>
+        </div>
+
         <div className="stats-grid">
           {stats.map((stat, index) => (
             <div key={index} className="stat-item">

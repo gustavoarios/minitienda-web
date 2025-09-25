@@ -30,7 +30,7 @@ body {
 
 .navbar {
   background: #353c46;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -61,18 +61,49 @@ body {
   display: flex;
   list-style: none;
   gap: 2rem;
-  color: #DFEEE9;
+  color: #dfeee9;
   font-family: "Montserrat", sans-serif;
 }
 
 .nav-link {
   text-decoration: none;
-  color: #DFEEE9;
+  color: #dfeee9;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .nav-link:hover {
+  color: #d1b7aa;
+}
+
+.nav-item-dropdown {
+  position: relative;
+}
+
+.nav-submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #353c46;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px 0;
+  min-width: 120px;
+  z-index: 100;
+}
+
+.nav-submenu-item {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: #DFEEE9;
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-submenu-item:hover {
+  background: #2c3e50;
   color: #D1B7AA;
 }
 
@@ -83,8 +114,9 @@ body {
   text-align: center;
   position: relative;
   align-items: flex-start;
-  /* Alinea hacia arriba */
   min-height: 100vh;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 5;
 }
 
 .hero::before {
@@ -101,7 +133,7 @@ body {
 .hero-content {
   position: relative;
   z-index: 2;
-  color: #DFEEE9;
+  color: #dfeee9;
   margin-top: -5rem;
   margin-left: 2rem;
 
@@ -213,12 +245,47 @@ body {
 
 .courses {
   padding: 4rem 2rem;
-  background: #f8f9fa;
+  background: url('/formation-image.png') top center/cover no-repeat;
+  position: relative;
+  min-height: 80vh;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 -10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.courses::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 1;
 }
 
 .courses-container {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.courses-header {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+
+.courses-header p {
+  font-size: 1.1rem;
+  color: #333;
+  max-width: 1100px;
+  margin: 20px auto 0;
+  line-height: 1.7;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .courses h2 {
@@ -232,6 +299,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  position: relative;
 }
 
 .course-card {
@@ -336,8 +404,8 @@ body {
 .footer {
   background: #333;
   color: white;
-  text-align: center;
   padding: 2rem;
+  text-align: center;
 }
 
 .footer-content {
@@ -345,98 +413,222 @@ body {
   margin: 0 auto;
 }
 
-/* Experience Component Styles */
-.experience {
-  background: #DFEEE9;
-  padding: 4rem 2rem;
-  border-bottom: 1px solid #e9ecef;
+.toast-notification {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #353c46;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  font-size: 14px;
+  font-weight: 500;
+  animation: slideDown 0.3s ease-out;
 }
 
-.experience-container {
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.contact-section {
+  padding: 80px 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contact-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0 0 20px 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.contact-header p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
   max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
 }
 
-.experience-header {
-  margin-bottom: 3rem;
-}
-
-.experience-icon {
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  background: #8B1538;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1rem;
-}
-
-.experience-icon i {
-  color: white;
-  font-size: 1.5rem;
-}
-
-.experience h2 {
-  font-size: 2.5rem;
-  color: #333;
+.contact-info h3 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
   font-weight: 600;
-  margin: 0;
 }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  gap: 15px;
 }
 
-.stat-item {
-  text-align: center;
-  padding: 1rem;
+.contact-icon {
+  font-size: 2rem;
+  margin-top: 5px;
 }
 
-.stat-number {
-  font-size: 4rem;
-  font-weight: bold;
+.contact-details h4 {
+  font-size: 1.2rem;
   color: #353c46;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-  transition: transform 0.3s ease;
-  font-variant-numeric: tabular-nums; /* Para que los números no "bailen" durante la animación */
+  margin-bottom: 5px;
+  font-weight: 600;
 }
 
-.stat-number:hover {
-  transform: scale(1.1);
-}
-
-.stat-label {
-  font-size: 1.1rem;
+.contact-details p {
   color: #666;
-  line-height: 1.3;
-  font-weight: 500;
+  font-size: 1rem;
 }
 
-/* Responsive adjustments */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.social-link {
+  color: #666;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.social-link:hover {
+  color: #353c46;
+}
+
+.contact-form-container {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.formation-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-top: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.formation-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.formation-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 1);
+}
+
+.formation-card h3 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.formation-card p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.formation-button {
+  background-color: #353c46;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(53, 60, 70, 0.3);
+}
+
+.formation-button:hover {
+  background-color: #2c3e50;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(53, 60, 70, 0.4);
+}
+
+/* Aquí puedes modificar las sombras de Experience */
+.experience {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 -10px 30px rgba(0, 0, 0, 0.1);
+  /*          └─ Sombra hacia abajo ─┘          └─ Sombra hacia arriba ─┘ */
+}
+
+/* Aquí puedes modificar las sombras de Services */
+.services {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 -10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Aquí puedes modificar las sombras de Courses */
+.courses {
+  /* ...existing code... */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 -10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Aquí puedes modificar la sombra de Contact */
+.contact-section {
+  /* ...existing code... */
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+  /*          └─ Solo sombra hacia arriba */
+}
+
 @media (max-width: 768px) {
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-  
-  .stat-number {
-    font-size: 3rem;
-  }
-  
-  .experience h2 {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .stats-grid {
+  .contact-content {
     grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .contact-form-container {
+    padding: 30px 20px;
+  }
+  
+  .formation-cards {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .formation-card {
+    padding: 2rem 1.5rem;
   }
 }

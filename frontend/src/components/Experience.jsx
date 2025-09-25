@@ -90,13 +90,7 @@ function Experience() {
           <div className="experience-text">
             <h3>Master en Comunicación y Liderazgo</h3>
             <p>
-              Soy profesora y conferencista con un <strong>Máster en Comunicación y Liderazgo</strong>, con más de <strong>10 años</strong> de experiencia formando líderes y equipos. He capacitado a más de <strong>500 profesionales</strong> y soy autora de <strong>3 libros</strong> sobre liderazgo transformacional y comunicación efectiva.
-              Mi pasión es transmitir conocimientos prácticos que puedan aplicarse en la vida real, combinando teoría con experiencias adquiridas en el campo.
-            </p>
-
-            <p>
-              A lo largo de mi trayectoria dicté más de <strong>1500 conferencias</strong> en <strong>5 países</strong>, participando en congresos, universidades y organizaciones internacionales. Mi propósito es inspirar y acompañar a cada persona en su desarrollo, impulsando <strong>líderes auténticos</strong> capaces de generar un impacto positivo en sus entornos.
-              Creo firmemente que el liderazgo consciente y la comunicación clara son claves para transformar equipos y comunidades.
+              <strong>Descubrí la formación que ofrece nuestra profesional</strong>, diseñada para potenciar tus habilidades y acompañarte en tu desarrollo. Podés explorar todos los detalles ingresando a la pestaña <strong>“Formación”</strong> o haciendo <strong>click aquí debajo al contenido de tu interés</strong>. Encontrarás <strong>dos secciones principales</strong>: una con <strong>recursos gratuitos</strong>, ideales para empezar a aprender sin compromiso, y otra con <strong>cursos completos</strong>, pensados para quienes buscan profundizar y avanzar más rápido. Dependiendo de tu elección, serás redirigido al apartado correspondiente para acceder a todo el material disponible.
             </p>
 
 
@@ -112,6 +106,12 @@ function Experience() {
               <div className="stat-label">{stat.label}</div>
             </div>
           ))}
+        </div>
+
+        <div className="experience-button-container">
+          <button className="experience-button" onClick={() => window.location.href = '/about'}>
+            Conoce más sobre mí
+          </button>
         </div>
       </div>
     </section>

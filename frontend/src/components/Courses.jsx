@@ -1,35 +1,39 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 function Courses() {
-  const [courses, setCourses] = useState([]);
-
-  useEffect(() => {
-    // Simular carga de cursos
-    const sampleCourses = [
-      { id: 1, title: 'Desarrollo Web Frontend', price: 100, description: 'Aprende React, HTML, CSS y JavaScript' },
-      { id: 2, title: 'Backend con Node.js', price: 150, description: 'Desarrollo de APIs y servidores' },
-      { id: 3, title: 'Diseño UX/UI', price: 120, description: 'Principios de diseño y experiencia de usuario' }
-    ];
-    setCourses(sampleCourses);
-  }, []);
-
   return (
     <section className="courses">
       <div className="courses-container">
-        <h2>Nuestros Cursos</h2>
-        <div className="courses-grid">
-          {courses.map(course => (
-            <div key={course.id} className="course-card">
-              <h3>{course.title}</h3>
-              <p>{course.description}</p>
-              <span className="price">${course.price}</span>
-              <button className="enroll-button">Inscribirse</button>
-            </div>
-          ))}
+        <div className="courses-header">
+          <h2>Formación</h2>
+          <p>
+            <strong>Descubrí la formación que ofrece nuestra profesional</strong>, diseñada para potenciar tus habilidades y acompañarte en tu desarrollo. Podés explorar todos los detalles ingresando a la pestaña <strong>“Formación”</strong> o haciendo <strong>click aquí debajo al contenido de tu interés</strong>. Encontrarás <strong>dos secciones principales</strong>: una con <strong>recursos gratuitos</strong>, ideales para empezar a aprender sin compromiso, y otra con <strong>cursos completos</strong>, pensados para quienes buscan profundizar y avanzar más rápido. Dependiendo de tu elección, serás redirigido al apartado correspondiente para acceder a todo el material disponible.
+          </p>
+
+        </div>
+
+        <div className="formation-cards">
+          <div className="formation-card">
+            <h3>Recursos</h3>
+            <p>Accede a materiales gratuitos, artículos, guías y herramientas prácticas para comenzar tu desarrollo en liderazgo y comunicación.</p>
+            <button className="formation-button" onClick={() => window.location.href = '/recursos'}>
+              Explorar Recursos
+            </button>
+          </div>
+
+          <div className="formation-card">
+            <h3>Cursos</h3>
+            <p>Programas completos y estructurados diseñados para transformar tu manera de liderar y comunicarte de forma efectiva.</p>
+            <button className="formation-button" onClick={() => window.location.href = '/cursos'}>
+              Ver Cursos
+            </button>
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
+
 
 export default Courses;

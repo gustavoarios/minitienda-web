@@ -401,18 +401,6 @@ body {
   background: #218838;
 }
 
-.footer {
-  background: #333;
-  color: white;
-  padding: 2rem;
-  text-align: center;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .toast-notification {
   position: fixed;
   top: 100px;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Experience.css';
 
-function Experience() {
+function Experience({ showButton = true }) {
   const [hasAnimated, setHasAnimated] = useState(false);
   const [counters, setCounters] = useState([0, 0, 0, 0]);
   const sectionRef = useRef(null);
@@ -113,11 +113,19 @@ function Experience() {
           ))}
         </div>
 
-        <div className="experience-button-container">
-          <button className="experience-button" onClick={() => window.location.href = '/about'}>
-            Conoce más sobre mí
-          </button>
-        </div>
+        {showButton && (
+          <div className="experience-button-container">
+            <button
+              className="experience-button"
+              onClick={() => {
+                window.location.href = '/about';
+                setTimeout(() => window.scrollTo(0, 0), 10);
+              }}
+            >
+              Conoce más sobre mí
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

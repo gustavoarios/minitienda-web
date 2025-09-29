@@ -1,0 +1,158 @@
+.books-header {
+  margin-top: 48px; /* Puedes ajustar el valor según lo que necesites */
+}
+
+.books-section .experience-header {
+  margin-top: 48px; /* Ajusta el valor según lo que necesites */
+}
+
+.experience-header h2 {
+  margin-top: 0rem;    /* espacio arriba del título */
+  margin-bottom: 2rem; /* espacio debajo del título */
+}
+
+.book-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 48px;
+  gap: 40px;
+  margin-left: 0; /* elimina el margen izquierdo extra */
+}
+
+.book-row.image-left .book-info {
+  text-align: left;
+}
+
+.book-cover.small {
+  width: 50px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* sombra restaurada */
+}
+
+.book-cover.large {
+  width: 220px;
+  min-width: 120px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* sombra restaurada */
+}
+
+.book-info {
+  flex: 1;
+}
+
+.book-info h4 {
+  font-size: 2rem;       /* aumenta el tamaño de la letra */
+  margin-top: 0;
+}
+.book-info p {
+  margin: 0 0 4px 0;
+  width: 100%;
+  max-width: 100%; /* asegúrate que use todo el ancho disponible */
+}
+
+.books-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1200px; /* aumenta el ancho máximo */
+  width: 100%;
+  margin-left: 60px; /* mueve el contenido hacia la izquierda */
+}
+
+.books-list-animar {
+  opacity: 0;
+  transform: translateX(-80px);
+  animation: booksListEntrada 0.8s ease-out 0.2s forwards;
+}
+
+@keyframes booksListEntrada {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.books-row-top {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.books-row-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.book-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 40px;
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.book-buttons {
+  margin-top: 3em; /* baja los botones */
+  display: flex;
+  gap: 1em;
+}
+
+.book-btn {
+  padding: 0.5em 1.2em;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 5px;
+  border: 1px solid #D1B7AA;
+  background: #D1B7AA;
+  color: #353c46;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.book-btn:hover {
+  background: #353c46;
+  color: #DFEEE9;
+}
+
+@media (max-width: 1200px) {
+  .books-list {
+    max-width: 98vw;
+    padding: 0 1em;
+  }
+  .book-row {
+    gap: 24px;
+  }
+  .book-cover.large {
+    width: 160px;
+  }
+  .book-info h4 {
+    font-size: 1.5rem;
+  }
+  .book-info p {
+    max-width: 98vw;
+  }
+}
+
+@media (max-width: 700px) {
+  .book-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .book-cover.large {
+    width: 120px;
+  }
+  .book-info {
+    text-align: center;
+  }
+}
+

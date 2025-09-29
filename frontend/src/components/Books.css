@@ -62,7 +62,7 @@
   justify-content: center;
   max-width: 1200px; /* aumenta el ancho máximo */
   width: 100%;
-  margin-left: 60px; /* mueve el contenido hacia la izquierda */
+  margin-left: 100px; /* mueve el contenido hacia la izquierda */
 }
 
 .books-list-animar {

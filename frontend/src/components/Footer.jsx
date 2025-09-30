@@ -53,7 +53,7 @@ function Footer() {
           <div className="footer-info-section">
             <h3>Información</h3>
             <ul className="footer-info-list">
-              <li><a href="/about">Sobre Nosotros</a></li>
+              <li><a href="/about">Sobre Mi</a></li>
               <li><a href="/courses">Cursos</a></li>
               <li><a href="/contact">Contacto</a></li>
               <li><a href="#careers">Trabajá con Nosotros</a></li>

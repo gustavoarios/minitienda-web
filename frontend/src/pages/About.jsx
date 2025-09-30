@@ -7,6 +7,8 @@ function About() {
     <div className="home">
       {/* Experiencia */}
       <Experience showButton={false} />
+      {/* Separador sombreado */}
+      <div className="about-section-separator"></div>
       {/* Libros */}
       <Books />
     </div>

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 function Navbar() {
     const [showSubmenu, setShowSubmenu] = useState(false);
     const location = useLocation();
+    const navigate = useNavigate();
 
     const handleHomeClick = (e) => {
         // Si ya estamos en Home, hacer scroll al top
@@ -26,6 +27,16 @@ function Navbar() {
         }
     };
 
+    const handleAboutClick = (e) => {
+        e.preventDefault();
+        if (location.pathname !== '/about') {
+            navigate('/about');
+            setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
+
     return (
         <nav className="navbar">
             <div className="nav-container">
@@ -34,7 +45,11 @@ function Navbar() {
                 </Link>
                 <ul className="nav-menu">
                     <li><Link to="/" className="nav-link" onClick={handleHomeClick}>Inicio</Link></li>
-                    <li><Link to="/about" className="nav-link">Sobre Mi</Link></li>
+                    <li>
+                        <Link to="/about" className="nav-link" onClick={handleAboutClick}>
+                            Sobre Mi
+                        </Link>
+                    </li>
                     <li><Link to="/services" className="nav-link">Servicios</Link></li>
                     <li 
                         className="nav-item-dropdown"

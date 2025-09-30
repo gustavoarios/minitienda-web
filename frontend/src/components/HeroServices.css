@@ -1,0 +1,60 @@
+.hero-services {
+  height: calc(100vh - 70px); /* ajusta 70px según el alto del navbar */
+  min-height: 500px;
+  width: 100vw;
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('/servicios.png') center/cover no-repeat;
+  opacity: 0.45; /* opacidad de la imagen */
+  z-index: 1;
+}
+
+.hero-services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-services-container h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.hero-services-container p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 20px auto 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+
+.hero-services-header p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 20px auto 0;
+  font-family: "Montserrat", sans-serif;
+}
